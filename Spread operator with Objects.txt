@@ -1,0 +1,35 @@
+const a = { name: "Alice" };
+const b = {...a};
+b.name = "Bob";
+console.log(a.name);
+
+The output is "Alice".
+
+Breakdown of the Code:
+
+1. const a = { name: "Alice" };
+
+Here, a constant a is defined as an object with a single property, name, which is set to "Alice".
+
+2. const b = { ...a };
+
+This line creates a new object b using the spread operator (...).
+The spread operator takes all the properties of a and "spreads" them into a new object, effectively copying the properties of a into b.
+At this point, b is a shallow copy of a — a completely independent object with the same properties.
+
+3. b.name = "Bob";
+
+The name property of b is now changed to "Bob".
+Since b is a separate object, modifying its name property does not affect the name property of the original object a.
+
+4. console.log(a.name);
+
+The name property of a is logged to the console. Since the original object a was not modified, it still has its initial value "Alice".
+
+Key Concepts Highlighted:
+
+Spread Operator for Copying Objects: The spread operator creates a shallow copy of an object, meaning that changes to the new object do not affect the original, provided the properties are primitive (like strings, numbers, etc.).
+
+Immutability of Objects:In JavaScript, objects are passed by reference. However, using the spread operator creates a new object, so the two objects (a and b) are no longer linked.
+
+Shallow vs. Deep Copy: In this case, the spread operator creates a shallow copy, which is sufficient because the name property is a primitive value. If the property were a nested object, changes to the nested object would still affect the original object.
