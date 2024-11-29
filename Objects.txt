@@ -1,0 +1,40 @@
+Objects are reference tyoes => Variables that holds the reference to the object's location in the memory, not the object itself.
+
+Eg: 
+
+const a = { name: "Alice" };
+const b = a;
+b.name = "Bob";
+console.log(a.name);
+
+The output is "Bob".
+
+Breakdown of the Code:
+
+1. const a = { name: "Alice" };
+
+This line declares a constant variable named a and assigns it an object.
+The object has a single property, name, with the value "Alice".
+In JavaScript, objects are reference types, meaning that variables hold references to the object's location in memory, not the object itself.
+
+2. const b = a;
+
+This line declares another constant variable, b.
+It assigns b the value of a, which is a reference to the same object in memory.
+Now, both a and b point to the same object.
+
+3. b.name = "Bob";
+
+This line modifies the name property of the object referenced by b.
+Since a and b point to the same object, changing the property through b also affects the object accessed through a.
+
+4. console.log(a.name);
+
+This line prints the value of the name property of the object referenced by a.
+As we've seen, this object is the same as the one referenced by b, and its name property was changed to "Bob" in the previous step.
+Therefore, the output of this line will be "Bob".
+Key Point:
+
+The key point to understand is that object assignments in JavaScript create references, not copies. When you assign an object to a new variable, both variables point to the same underlying object. This means that changes made through one variable will be reflected in the other.
+
+In summary, the code demonstrates how changes made to an object through one reference (b) also affect the object accessed through another reference (a).
